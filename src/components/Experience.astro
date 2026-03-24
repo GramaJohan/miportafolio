@@ -1,0 +1,15 @@
+---
+import Section from './Section.astro';
+import { profile } from '../../Profile.js';
+---
+
+<Section id="experiencia" title="Objetivos Profesionales" subtitle="Mis metas y lo que busco aportar en mi carrera.">
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+    <p class="text-lg">
+      Como {profile.titulo}, mi objetivo principal es aplicar mis conocimientos en {profile.habilidades.join(', ')} para resolver retos tecnológicos reales.
+    </p>
+    <p class="mt-4">
+      Actualmente estoy enfocado en fortalecer mis habilidades técnicas a través de proyectos académicos como "{profile.proyectos[0]?.nombre}" y "{profile.proyectos[1]?.nombre}", buscando siempre la eficiencia y el aprendizaje continuo.
+    </p>
+  </div>
+</Section>

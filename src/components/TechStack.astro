@@ -1,0 +1,30 @@
+---
+import Section from './Section.astro';
+import { profile } from '../../Profile.js';
+
+// Map profile.habilidades to the structure expected by the component
+// Since they aren't categorized in Profile.js, we'll put them in a general category or try to guess.
+const skills = profile.habilidades.map(skill => ({
+  name: skill,
+  category: 'Habilidades Técnicas'
+}));
+
+const categories = [...new Set(skills.map(s => s.category))];
+---
+
+<Section id="tech-stack" title="Tech Stack" subtitle="Tecnologías y herramientas que utilizo para dar vida a los proyectos.">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    {categories.map(category => (
+      <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
+        <h4 class="text-blue-600 font-bold mb-6 uppercase tracking-wider text-sm">{category}</h4>
+        <div class="flex flex-wrap gap-3 justify-center">
+          {skills.filter(s => s.category === category).map(skill => (
+            <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-full text-base font-medium border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+              {skill.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
