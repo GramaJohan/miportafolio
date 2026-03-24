@@ -9,12 +9,12 @@ interface Props {
 const { id, title, subtitle, className = "" } = Astro.props;
 ---
 
-<section id={id} class={`py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-16 ${className}`}>
+<section id={id} class={`py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20 ${className}`}>
   {title && (
     <div class="mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4 italic-">{title}</h2>
-      {subtitle && <p class="text-lg text-gray-600 max-w-3xl">{subtitle}</p>}
-      <div class="h-1.5 w-20 bg-blue-600 rounded-full mt-4"></div>
+      <h2 class="text-3xl font-bold font-['Outfit'] text-slate-100 sm:text-4xl mb-4">{title}</h2>
+      {subtitle && <p class="text-lg text-slate-400 max-w-3xl">{subtitle}</p>}
+      <div class="h-1.5 w-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-4"></div>
     </div>
   )}
   <slot />

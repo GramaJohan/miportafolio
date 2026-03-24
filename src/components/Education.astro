@@ -10,18 +10,19 @@ const education = profile.educacion.map(edu => ({
 ---
 
 <Section id="educacion" title="Formación" subtitle="Mis antecedentes académicos y trayectoria educativa.">
-  <div class="max-w-3xl mx-auto">
-    <div class="space-y-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
       {education.map(edu => (
-        <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
-          <div class="flex items-start gap-4">
-            <div class="bg-blue-50 p-3 rounded-lg text-blue-600">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-            </div>
-            <div>
-              <h5 class="font-bold text-xl text-gray-900">{edu.degree}</h5>
-              <p class="text-blue-600 font-medium">{edu.institution}</p>
-              <span class="inline-block mt-2 px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase">
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all z-10 mx-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+          </div>
+          
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl shadow-lg hover:border-blue-500/50 hover:bg-slate-800/60 transition-all">
+            <div class="flex flex-col gap-2">
+              <h5 class="font-bold text-xl font-['Outfit'] text-slate-100">{edu.degree}</h5>
+              <p class="text-blue-400 font-medium">{edu.institution}</p>
+              <span class="self-start inline-block mt-1 px-3 py-1 bg-slate-900 border border-slate-700 text-slate-300 text-xs font-bold rounded-full uppercase tracking-wider">
                 {edu.year}
               </span>
             </div>

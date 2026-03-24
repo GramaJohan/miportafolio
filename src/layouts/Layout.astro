@@ -4,11 +4,11 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Mi Portafolio Profesional" } = Astro.props;
+const { title, description = "Portafolio Profesional | Johan Sebastian Carrillo - Desarrollador y Estudiante de Ingeniería Informática" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth dark">
 	<head>
 		<style is:global>
             @import "tailwindcss";
@@ -21,22 +21,21 @@ const { title, description = "Mi Portafolio Profesional" } = Astro.props;
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-gray-50 text-gray-900 font-['Inter',_sans-serif] selection:bg-blue-100 selection:text-blue-700">
+	<body class="bg-slate-950 text-slate-300 font-['Inter',_sans-serif] selection:bg-blue-500/30 selection:text-blue-200 antialiased overflow-x-hidden">
+        <div class="fixed inset-0 z-[-1] bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,58,138,0.3),rgba(255,255,255,0))]"></div>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--accent: 59, 130, 246; /* blue-500 */
+		--accent-light: 147, 197, 253; /* blue-300 */
+		--accent-dark: 30, 58, 138; /* blue-900 */
 	}
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+    }
 </style>

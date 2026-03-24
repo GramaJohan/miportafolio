@@ -3,30 +3,34 @@ import Section from './Section.astro';
 import { profile } from '../../Profile.js';
 ---
 
-<Section id="sobre-mi" title="Sobre mí" subtitle="Una breve introducción sobre mi trayectoria y motivaciones.">
+<Section id="sobre-mi" title="Sobre mí" subtitle="Un vistazo a mi perfil y motivaciones.">
   <div class="grid md:grid-cols-2 gap-12 items-center">
-    <div class="prose prose-lg text-gray-600">
-      <p class="mb-4">
+    <div class="prose prose-lg prose-invert text-slate-300">
+      <p class="mb-6 leading-relaxed">
         {profile.sobreMi}
       </p>
-      <p class="mb-4">
-        Estoy cursando {profile.educacion[0]?.carrera} en {profile.educacion[0]?.institucion}, enfocándome en el aprendizaje continuo y en la creación de proyectos funcionales.
+      <p class="mb-4 leading-relaxed">
+        Actualmente curso {profile.educacion[0]?.carrera} en el {profile.educacion[0]?.institucion}, enfocándome en el aprendizaje continuo y en la creación de proyectos funcionales que resuelvan problemas reales.
       </p>
     </div>
-    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-      <h4 class="text-xl font-bold mb-6 text-gray-900">Datos Rápidos</h4>
+    <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-slate-700/50 hover:border-slate-600 transition-colors">
+      <h4 class="text-xl font-bold font-['Outfit'] mb-6 text-slate-100">Datos Rápidos</h4>
       <dl class="space-y-4">
         <div class="flex items-center">
-          <dt class="w-32 font-medium text-gray-500">Ubicación</dt>
-          <dd class="text-gray-900 font-semibold">{profile.ubicacion}</dd>
+          <dt class="w-32 font-medium text-slate-400">Ubicación</dt>
+          <dd class="text-slate-200 font-semibold">{profile.ubicacion}</dd>
         </div>
-        <div class="flex items-center border-t border-gray-50 pt-4">
-          <dt class="w-32 font-medium text-gray-500">Email</dt>
-          <dd class="text-gray-900 font-semibold">{profile.email}</dd>
+        <div class="flex items-center border-t border-slate-700/50 pt-4">
+          <dt class="w-32 font-medium text-slate-400">Email</dt>
+          <dd class="text-slate-200 font-semibold">{profile.email}</dd>
         </div>
-        <div class="flex items-center border-t border-gray-50 pt-4">
-          <dt class="w-32 font-medium text-gray-500">Educación</dt>
-          <dd class="text-gray-900 font-semibold">{profile.educacion[0]?.institucion}</dd>
+        <div class="flex items-center border-t border-slate-700/50 pt-4">
+          <dt class="w-32 font-medium text-slate-400">Teléfono</dt>
+          <dd class="text-slate-200 font-semibold">{profile.telefono}</dd>
+        </div>
+        <div class="flex items-center border-t border-slate-700/50 pt-4">
+          <dt class="w-32 font-medium text-slate-400">Educación</dt>
+          <dd class="text-slate-200 font-semibold">{profile.educacion[0]?.institucion}</dd>
         </div>
       </dl>
     </div>
